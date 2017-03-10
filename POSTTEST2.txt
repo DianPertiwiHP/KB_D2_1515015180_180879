@@ -1,0 +1,26 @@
+Nama : Dian Pertiwi H P
+NIM : 1515015180
+Kelompok : D2
+
+1. Ubah bahasa Prolog berikut menjadi bahasa natural:
+	a. Dian adalah nama orang.
+   	b. Atoz adalah merek mobil.
+   	c. Dian suka mobil atoz.
+   	d. Mobil atoz dijual.
+   	e. X dapat membeli y jika.
+      		X adalah variabel pengganti orang.
+      		Y adalah variabel pengganti mobil.
+      		X menyukai Y.
+      		Y dijual.
+  	f. Apa yang _ suka?
+
+2. Mengubah bahasa Natural menjadi bahasa Prolog
+   a. Hobi(Ricky, Catur).
+   b. Orang(Embang, Pemalas).
+   c. Seorang(Yusida, Vegetarian).
+   d. Pandai(Kusdiar, Gitar).
+   e. Warna(Mobil, Merah),Milik(Mobil, Sadek),  Merk(Mobil, BMW).
+   f. Pemain(Awan, Piano), berasal(Awan, Pontianak), suku(Awan, Jawa).
+   g. Dikatakan(Orang, Baik):- sifat(Orang, Penyayang), sifat(Orang, Dermawan).
+   h. Dikatakan(Orang, Pintar):- dapat(Matematika, Tinggi); dapat(Ipa, Tinggi); dapat(Ips, Tinggi).
+   i. Pasti(Orang, Mati).
