@@ -15,12 +15,12 @@ Kelompok : D2
   	f. Apa yang _ suka?
 
 2. Mengubah bahasa Natural menjadi bahasa Prolog
-   a. Hobi(Ricky, Catur).
-   b. Orang(Embang, Pemalas).
-   c. Seorang(Yusida, Vegetarian).
-   d. Pandai(Kusdiar, Gitar).
-   e. Warna(Mobil, Merah),Milik(Mobil, Sadek),  Merk(Mobil, BMW).
-   f. Pemain(Awan, Piano), berasal(Awan, Pontianak), suku(Awan, Jawa).
-   g. Dikatakan(Orang, Baik):- sifat(Orang, Penyayang), sifat(Orang, Dermawan).
-   h. Dikatakan(Orang, Pintar):- dapat(Matematika, Tinggi); dapat(Ipa, Tinggi); dapat(Ips, Tinggi).
-   i. Pasti(Orang, Mati).
+   	a. Hobi(Ricky, Catur).
+   	b. Orang(Embang, Pemalas).
+   	c. Seorang(Yusida, Vegetarian).
+   	d. Pandai(Kusdiar, Gitar).
+   	e. Warna(Mobil, Merah),Milik(Mobil, Sadek),  Merk(Mobil, BMW).
+   	f. Pemain(Awan, Piano), berasal(Awan, Pontianak), suku(Awan, Jawa).
+   	g. Dikatakan(Orang, Baik):- sifat(Orang, Penyayang), sifat(Orang, Dermawan).
+   	h. Dikatakan(Orang, Pintar):- dapat(Matematika, Tinggi); dapat(Ipa, Tinggi); dapat(Ips, Tinggi).
+   	i. Pasti(Orang, Mati).
