@@ -1,0 +1,66 @@
+NIM : 1515015180
+Analisis sesuai format dimodul!
+
+
+Untuk mengetahui terjadinya lacakbalik, akan diamati langkah demi langkah
+bagaimana Visual Prolog mencari solusi dari goal yang diberikan.
+
+1.Visual Prolog memanggil predikat pembunuh dengan variabel bebas X.
+  Untuk mencoba menjawab panggilan ini, Visual Prolog mencari di program untuk pencocokan. 
+  Ditemukan kecocokan dengan klausa pembunuh, dan variabel
+  X diunifikasikan dengan variabel Pembunuh.
+
+2.Kemudian, Visual Prolog berusaha untuk memenuhi bagian body dari rule. Untuk
+  melakukannya, Visual Prolog memanggil subgoal yang pertama pada body dari rule
+  tersebut yaitu orang(Pembunuh,_,_,_),dan mencari pencocokan untuk panggilan ini.
+  Ditemukan pencocokan dengan fakta pertama dari klausa relasi orang. Pada titik ini Pembunuh
+  diikat dengan nilai budi. Kemudian Visual Prolog menset titik lacakbalik pada
+  fakta orang(budi,,_,_,_).
+
+3.Dengan Pembunuh diikat pada nilai budi, Visual Prolog membuat panggilan untuksubgoal yang kedua 
+  yaitu terbunuh(Terbunuh), dan mencari pencocokan. Dan menemukan dengan fakta yang pertama terbunuh(siti). 
+  Dan Prolog menset titik lacakbalik pada terbunuh(siti).
+
+4.Kemudian Prolog mencoba memenuhi subgoal ketiga yaitu 
+  Terbunuh <> Pembunuh,artinya Terbunuh bukan Pembunuh. Dan prolog menset titik lacakbalik ini.
+
+5.Untuk memenuhi subgoal keempat yaitu pernyataan dicurigai(Pembunuh), dimana fakta Pembunuh tadi adalah budi,
+  dari pernyataan tersebut dilakukan proses pencarian menggunakan unifikasi terhadap pernyataan syarat-syarat tersebut, 
+  dan ditemukan pernyataan syarat pertama pada pencocokan dengan fakta yang pertama adalah terbunuh_dengan(siti,Senjata), 
+  Kemudian program akan mencari senjata yang di pakai untuk membunuh, dengan melakukan proses di variable terbunuh_dengan .
+
+6.Lalu fakta dari syarat kedua yaitu cara_kerja_mirip(Benda,Senjata) , 
+  Prolog akan memanggil fakta terbunuh_dengan untuk mengetahui  senjata yang dipakai.
+  dan didapat fakta pertama ialah cara_kerja_mirip(kaki_palsu, pentungan). 
+  Maka  variabel senjata yang dimaksud dalam terbunuh_dengan(siti,Senjata) adalah  Pentungan.
+
+7.Syarat ketiga kemungkinan_milik(X,Benda). Pada fakta ini terdapat pernyataan bersyarat yaitu pernyataan milik(X,Benda). 
+  Dari pernyataan milik(X,Benda) ditemukan fakta pertama bahwa milik(budi,kaki_palsu).
+
+8.Setelah itu prolog kembali memeriksa subgoal berikutnya dari pembunuh, yaitu ternodai(Pembunuh,Zat), 
+  dan mencari pencocokan untuk panggilan ini. Ditemukan pencocokan dengan fakta pertama ternodai(budi, darah) maka fakta ini dikunci.
+
+9.Terakhir, Prolog mencoba untuk memenuhi subgoal yang terakhir yaitu, ternodai(Terbunuh,Zat). 
+  Dan prolog akan melakukan proses pencarian menggunakan unifikasi pada fakta-fakta yang ada 
+  dan menemukan fakta kedua setelah ternodai(budi, darah) yaitu ternodai(siti, darah). 
+
+10.Karena tidak ditemukan kegagalan maka proses pengecekan berakhir. Dan sukses(true).
+
+11.Kesimpulan dari pernyataan dan fakta-fakta yang ada, siti memiliki noda sama persis dengan budi.
+   Berdasarkan kesamaan fakta-fakta tersebut, goal menampilkan bahwa budilah yang membunuh siti.
+
+	pembunuh(Budi):-
+	orang(Budi,_,_,_),
+	terbunuh(Siti),
+	Terbunuh <> Pembunuh, 
+	dicurigai(Budi),
+		dicurigai(Budi):-
+		terbunuh_dengan(Siti,Senjata) ,
+		cara_kerja_mirip(kaki_palsu, Pentungan) ,
+		kemungkinan_milik(Budi,Kaki_palsu).
+
+	ternodai(Budi,darah),
+	ternodai(Siti,darah).
+
+	
+	
